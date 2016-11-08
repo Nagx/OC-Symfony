@@ -1,0 +1,7 @@
+hello_the_world:
+    path:    /
+    defaults: { _controller: OCPlatformBundle:Advert:index }
+
+bye_the_world:
+    path:    /bye
+    defaults: { _controller: OCPlatformBundle:Advert:bye }
