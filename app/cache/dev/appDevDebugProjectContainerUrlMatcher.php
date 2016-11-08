@@ -105,18 +105,18 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        // oc_platform_homepage
+        // hello_the_world
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'oc_platform_homepage');
+                return $this->redirect($pathinfo.'/', 'hello_the_world');
             }
 
-            return array (  '_controller' => 'OCPlatformBundle:Default:index',  '_route' => 'oc_platform_homepage',);
+            return array (  '_controller' => 'OC\\PlatformBundle\\Controller\\AdvertController::indexAction',  '_route' => 'hello_the_world',);
         }
 
-        // hello_the_world
-        if ($pathinfo === '/hello-world') {
-            return array (  '_controller' => 'OC\\PlatformBundle\\Controller\\AdvertController::indexAction',  '_route' => 'hello_the_world',);
+        // bye_the_world
+        if ($pathinfo === '/bye') {
+            return array (  '_controller' => 'OC\\PlatformBundle\\Controller\\AdvertController::byeAction',  '_route' => 'bye_the_world',);
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
