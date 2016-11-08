@@ -4,26 +4,45 @@ namespace OC\PlatformBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 class AdvertController extends Controller
 {
     public function indexAction()
     {
-        $content = $this
-            ->get('templating')
-            ->render('OCPlatformBundle:Advert:index.html.twig', array('nom' => 'Kevin'))
-        ;
-
-        return new Response($content);
+        $url = $this->generateUrl(
+            'oc_platform_home',
+            array(),
+            UrlGeneratorInterface::ABSOLUTE_URL
+        );
+        return new Response("L'URL principale est : " . "<a href=".$url.">".$url."</a>");
     }
 
-    public function byeAction()
+    public function viewAction($id)
     {
-        $content = $this
-            ->get('templating')
-            ->render('OCPlatformBundle:Advert:bye.html.twig', array('nom' => 'Kevin'))
-        ;
+        return new Response('Affichage de l\'annonce d\'id : ' . $id);
+    }
 
-        return new Response($content);
+    public function viewSlugAction($slug, $year, $_format)
+    {
+        return new Response(
+            "On pourrait afficher l'annonce correspondant au
+            slug '" . $slug . "', créée en " . $year . " et au format " . $_format . "."
+        );
+    }
+
+    public function addAction()
+    {
+
+    }
+
+    public function deleteAction()
+    {
+
+    }
+
+    public function editAction()
+    {
+
     }
 }
