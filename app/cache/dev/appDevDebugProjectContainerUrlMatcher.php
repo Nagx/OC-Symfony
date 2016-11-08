@@ -114,6 +114,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'OC\\PlatformBundle\\Controller\\AdvertController::indexAction',  '_route' => 'hello_the_world',);
         }
 
+        // bye_the_world
+        if ($pathinfo === '/bye') {
+            return array (  '_controller' => 'OC\\PlatformBundle\\Controller\\AdvertController::byeAction',  '_route' => 'bye_the_world',);
+        }
+
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }
 }
