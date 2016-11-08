@@ -1,0 +1,8 @@
+8b2a8f,127.0.0.1,GET,http://localhost:8000/,1478596404,,200
+cb4e33,127.0.0.1,GET,http://localhost:8000/,1478596459,,200
+9b9e15,127.0.0.1,GET,http://localhost:8000/,1478596897,5faf1c,200
+5faf1c,127.0.0.1,GET,http://localhost:8000/,1478596897,,500
+3747f9,127.0.0.1,GET,http://localhost:8000/hello-world,1478596923,,200
+ae3ddb,127.0.0.1,GET,http://localhost:8000/hello-world,1478597128,6ec65b,200
+6ec65b,127.0.0.1,GET,http://localhost:8000/hello-world,1478597128,,500
+837b43,127.0.0.1,GET,http://localhost:8000/hello-world,1478597144,,200
