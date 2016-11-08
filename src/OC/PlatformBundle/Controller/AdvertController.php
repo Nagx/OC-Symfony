@@ -9,7 +9,9 @@ class AdvertController extends Controller
 {
     public function indexAction()
     {
-        $content = $this->get('templating')->render('OCPlatformBundle:Advert:index.html.twig');
+        $content = $this
+            ->get('templating')
+            ->render('OCPlatformBundle:Advert:index.html.twig', array('nom' => 'Kevin'));
 
         return new Response($content);
     }
